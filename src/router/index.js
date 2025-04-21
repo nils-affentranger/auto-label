@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 import SettingsPage from '../views/SettingsPage.vue';
 import ScanPage from '../views/ScanPage.vue';
 import LabelPage from '../views/LabelPage.vue';
-import PrintLabelPage from '../views/PrintLabelPage.vue';
 
 const routes = [
   {
@@ -26,12 +25,6 @@ const routes = [
     name: 'Label',
     component: LabelPage,
     meta: { title: 'Label - Smart Label Printer' }
-  },
-  {
-    path: '/print',
-    name: 'PrintLabel',
-    component: PrintLabelPage,
-    meta: { title: 'Print Label' }
   }
 ];
 

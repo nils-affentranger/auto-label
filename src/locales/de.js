@@ -70,7 +70,9 @@ export default {
     migel: 'MiGeL',
     migelNr: 'MiGeL-Nr: {code}',
     labelPreview: 'Etikettenvorschau',
-    barcodeNote: 'Hinweis: Der Barcode wird mit der Schriftart "LibreBarcode39" angezeigt, die in dieser Anwendung enthalten ist.'
+    barcodeNote: 'Hinweis: Der Barcode wird mit der Schriftart "LibreBarcode39" angezeigt, die in dieser Anwendung enthalten ist.',
+    preview: 'Etikettenvorschau',
+    download: 'Herunterladen'
   },
 
   // Settings Page

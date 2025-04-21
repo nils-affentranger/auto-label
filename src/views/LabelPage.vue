@@ -3,6 +3,7 @@ import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue';
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import SwMeTranslation from '../components/SwMeTranslation.vue';
+import { generateLabelPNG } from '../utils/labelGenerator';
 
 const router = useRouter();
 const { t } = useI18n();
@@ -449,10 +450,22 @@ const backToScan = () => {
   router.push('/scan');
 };
 
-// Print the label
-const printLabel = () => {
-  // Navigate to the dedicated print page
-  router.push('/print');
+// Update the printLabel function
+const printLabel = async () => {
+  if (!selectedProduct.value) return;
+
+  try {
+    // Get the label preview element by ID
+    const labelElement = document.getElementById('label-preview');
+    if (!labelElement) {
+      console.error('Label preview element not found');
+      return;
+    }
+
+    await generateLabelPNG(labelElement);
+  } catch (error) {
+    console.error('Error generating label:', error);
+  }
 };
 
 // Generate label content based on the selected product
@@ -937,10 +950,10 @@ const openEanInput = () => {
               </v-card-title>
             </v-card-item>
             <v-card-text class="d-flex justify-center preview-container">
-              <div class="label-content" :style="{
+              <div id="label-preview" class="label-content" :style="{
                 width: `${labelWidth * 5}px`,
                 height: `${labelHeight * 5}px`,
-                fontSize: `calc(80% * (${labelWidth} / 59))`
+                fontSize: `${Math.round(16 * (labelWidth / 59))}px`
               }">
                 <div class="article-name" :style="{ 
                   fontSize: `${articleNameFontSize}pt`, 
@@ -1020,17 +1033,13 @@ const openEanInput = () => {
 
 /* Label content styles - these are needed for the actual label */
 .label-content {
-  font-family: 'Open Sans', Arial, sans-serif;
   margin: 1rem auto;
   padding: 0.5rem;
   background-color: white;
   border: 1px solid #d1e6f0;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  overflow: clip;
-  position: relative;
+  overflow: visible;
   box-shadow: var(--box-shadow);
-  color: #000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

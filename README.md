@@ -1,5 +1,28 @@
-# Vue 3 + Vite
+# Auto Label
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A web-based label printing application.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Requirements
+
+- A modern web browser (Chrome, Firefox, Edge, etc.)
+
+## Running the Application
+
+1. Download and extract the application files to a folder on your computer
+2. Double-click the `server.exe` file
+3. The application will automatically open in your default web browser
+
+Note: The first time you run the application, Windows might show a security warning. This is normal for downloaded applications. You can safely proceed by clicking "More info" and then "Run anyway".
+
+## Building from Source
+
+If you want to build the application yourself:
+
+1. Install Node.js and npm
+2. Run `npm install`
+3. Run `npm run package`
+4. The built files will be in the `dist` folder, including the `server.exe`
+
+## Stopping the Application
+
+To stop the application, press Ctrl+C in the Command Prompt window where the server is running.

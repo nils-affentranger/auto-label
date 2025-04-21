@@ -3,13 +3,22 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Nils Affentranger",
+    "email": "nils@nils-affentranger.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build-server": "npx pkg server.js --targets node18-win-x64 --output dist/auto-label.exe --config pkg.json",
+    "package": "npm run build && npm run build-server"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
+    "jspdf-barcode": "^1.0.2",
     "vue": "^3.5.13",
     "vue-i18n": "^9.14.4",
     "vue-router": "^4.2.5",
@@ -18,6 +27,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.2",
+    "pkg": "^5.8.1",
     "vite": "^6.3.1"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "scripts": "server.js",
+  "assets": [
+    "dist/**/*"
+  ],
+  "targets": [
+    "node18-win-x64"
+  ],
+  "output": "dist/auto-label.exe"
+} 

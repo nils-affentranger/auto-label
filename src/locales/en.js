@@ -71,7 +71,9 @@ export default {
     migel: 'MiGeL',
     migelNr: 'MiGeL-Nr: {code}',
     labelPreview: 'Label Preview',
-    barcodeNote: 'Note: The barcode is displayed using the "LibreBarcode39" font which is included in this application.'
+    barcodeNote: 'Note: The barcode is displayed using the "LibreBarcode39" font which is included in this application.',
+    preview: 'Label Preview',
+    download: 'Download'
   },
 
   // Settings Page
